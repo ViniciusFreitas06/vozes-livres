@@ -29,41 +29,61 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
+/*==================== SCROLL EVENTS ====================*/
+// Throttle scroll events for better performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Combined scroll handler for better performance
+const handleScroll = throttle(() => {
+    scrollHeader();
+    scrollUp();
+    scrollActive();
+}, 16); // ~60fps
+
+window.addEventListener('scroll', handleScroll);
+
+/*==================== SCROLL FUNCTIONS ====================*/
 function scrollHeader(){
     const nav = document.getElementById('header')
     // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+    if(window.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
-window.addEventListener('scroll', scrollHeader)
 
-/*==================== SHOW SCROLL UP ====================*/ 
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+    if(window.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
-window.addEventListener('scroll', scrollUp)
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
-
 function scrollActive(){
     const scrollY = window.pageYOffset
 
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+            const activeLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+            if(activeLink) activeLink.classList.add('active-link')
         }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+            const activeLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+            if(activeLink) activeLink.classList.remove('active-link')
         }
     })
 }
-window.addEventListener('scroll', scrollActive)
 
 /*==================== SMOOTH SCROLLING ====================*/
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -139,8 +159,10 @@ class Carousel {
 }
 
 // Initialize carousel when DOM is loaded
+let carouselInstance;
 document.addEventListener('DOMContentLoaded', () => {
-    new Carousel();
+    carouselInstance = new Carousel();
+    window.carouselInstance = carouselInstance;
 });
 
 /*==================== FORM VALIDATION ====================*/
@@ -285,8 +307,8 @@ class ScrollReveal {
         // Check which elements are in viewport on scroll
         window.addEventListener('scroll', () => this.checkElements());
         
-        // Initial check
-        this.checkElements();
+        // Initial check - ativar elementos imediatamente se estiverem visíveis
+        setTimeout(() => this.checkElements(), 100);
     }
     
     addRevealClass() {
@@ -295,7 +317,6 @@ class ScrollReveal {
             '.sobre__content',
             '.sobre__image',
             '.objetivo__card',
-            '.carousel__item',
             '.contato__info',
             '.contato__form',
             '.stat'
@@ -308,6 +329,7 @@ class ScrollReveal {
     }
     
     checkElements() {
+        this.elements = document.querySelectorAll('.reveal'); // Atualizar lista
         this.elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
@@ -411,10 +433,10 @@ if ('ontouchstart' in window) {
 document.addEventListener('keydown', (e) => {
     if (e.target.closest('.premiacoes__carousel')) {
         const carousel = window.carouselInstance;
-        if (e.key === 'ArrowLeft') {
+        if (carousel && e.key === 'ArrowLeft') {
             e.preventDefault();
             carousel.prevSlide();
-        } else if (e.key === 'ArrowRight') {
+        } else if (carousel && e.key === 'ArrowRight') {
             e.preventDefault();
             carousel.nextSlide();
         }
@@ -422,42 +444,21 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Focus management for mobile menu
-const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
+const navToggleEl = document.getElementById('nav-toggle');
+const navCloseEl = document.getElementById('nav-close');
 const firstNavLink = document.querySelector('.nav__link');
 
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
+if (navToggleEl) {
+    navToggleEl.addEventListener('click', () => {
         setTimeout(() => {
             if (firstNavLink) firstNavLink.focus();
         }, 100);
     });
 }
 
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        if (navToggle) navToggle.focus();
+if (navCloseEl) {
+    navCloseEl.addEventListener('click', () => {
+        if (navToggleEl) navToggleEl.focus();
     });
 }
-
-/*==================== PERFORMANCE OPTIMIZATIONS ====================*/
-// Throttle scroll events for better performance
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-// Apply throttling to scroll events
-window.addEventListener('scroll', throttle(() => {
-    scrollHeader();
-    scrollActive();
-}, 16)); // ~60fps
 
