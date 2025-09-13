@@ -168,7 +168,8 @@ button {
   font-size: 1.25rem;        
   transition: var(--transition);
   box-shadow: 0 4px 20px var(--shadow-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .buttonLermais:hover {
@@ -397,9 +398,11 @@ button {
 
 /* ===== SOBRE ===== */
 .sobre__container {
-  display: grid;
+  display: flex;           
+  flex-direction: column;  
+  align-items: center;     
+  justify-content: center; 
   gap: 2rem;
-  align-items: center;
 }
 
 .sobre__text {
