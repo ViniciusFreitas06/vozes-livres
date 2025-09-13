@@ -462,3 +462,15 @@ if (navCloseEl) {
     });
 }
 
+function lerMais() {
+    const texto = document.getElementById("texto_extra");
+    const btn = document.getElementById("btnLerMais");
+
+    if (texto.style.display === "none") {
+        texto.style.display = "block";
+        btn.innerText = "Ler menos";
+    } else {
+        texto.style.display = "none";
+        btn.innerText = "Ler mais";
+    }
+}
