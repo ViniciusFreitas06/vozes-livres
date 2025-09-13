@@ -406,6 +406,7 @@ button {
   margin-bottom: var(--mb-1-5);
   color: var(--text-color);
   line-height: 1.8;
+  text-align: justify;
 }
 
 .sobre__stats {
