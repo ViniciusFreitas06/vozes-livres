@@ -331,7 +331,9 @@ button {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--gradient-light);
+  /*background: var(--gradient-light);*/
+  background: url("/assets/images/tela_fundo_roxo_escuro.png") no-repeat center center;
+  background-size: cover;
 }
 
 .hero__container {
@@ -348,6 +350,7 @@ button {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-1);
   line-height: 1.2;
+  color: var(--primary-lighter);
 }
 
 .hero__title-accent {
@@ -358,7 +361,7 @@ button {
 }
 
 .hero__subtitle {
-  color: var(--text-light);
+  color: var(--primary-lighter);
   margin-bottom: var(--mb-2);
   font-size: 1.125rem;
 }
@@ -887,4 +890,42 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+.galeria__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px; /* altura base das linhas */
+  grid-auto-flow: dense; /* preenche os espaços vazios */
+  gap: 10px;
+}
+
+.galeria__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.galeria__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.galeria__item:hover img {
+  transform: scale(1.1);
+}
+
+/* Faz algumas fotos ocuparem mais espaço, tipo "masonry" */
+.galeria__item:nth-child(2) {
+  grid-row: span 2; /* ocupa 2 linhas */
+}
+.galeria__item:nth-child(4) {
+  grid-column: span 2; /* ocupa 2 colunas */
+}
+.galeria__item:nth-child(6) {
+  grid-row: span 2;
+}
+
 
