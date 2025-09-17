@@ -474,3 +474,23 @@ function lerMais() {
         btn.innerText = "Ler mais";
     }
 }
+
+function verMais() {
+  const itens = document.querySelectorAll(".gallery-item");
+  const btn = document.getElementById("btnVerMais");
+
+  // Verifica se está escondido
+  if (btn.innerText === "Mostrar mais") {
+    itens.forEach(item => (item.style.display = "block"));
+    btn.innerText = "Mostrar menos";
+  } else {
+    itens.forEach((item, i) => {
+      item.style.display = i < 8 ? "block" : "none"; // mantém só 8
+    });
+    btn.innerText = "Mostrar mais";
+  }
+}
+
+document.getElementById("btnVerMais").addEventListener("click", verMais);
+
+
