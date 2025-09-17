@@ -165,7 +165,7 @@ button {
   padding: 1rem 2rem;      
   border-radius: 50px;
   font-weight: var(--font-medium);
-  font-size: 1.25rem;        
+  font-size: 1.1rem;        
   transition: var(--transition);
   box-shadow: 0 4px 20px var(--shadow-color);
   margin-bottom: 0.5rem;
@@ -943,7 +943,7 @@ button {
   padding: 1rem 2rem;      
   border-radius: 50px;
   font-weight: var(--font-medium);
-  font-size: 1.25rem;        
+  font-size: 1.1rem;        
   transition: var(--transition);
   box-shadow: 0 4px 20px var(--shadow-color);
   margin-bottom: 2rem;
