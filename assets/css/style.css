@@ -911,9 +911,20 @@ button {
 }
 
 /* Esconde a partir do 9º item */
-.gallery-item:nth-child(n+9) {
-  display: none;
+/* Desktop: mostra 8 itens */
+@media (min-width: 769px) {
+  .gallery-item:nth-child(n+9) {
+    display: none;
+  }
 }
+
+/* Mobile: mostra 4 itens */
+@media (max-width: 768px) {
+  .gallery-item:nth-child(n+5) {
+    display: none;
+  }
+}
+
 
 /* Botão */
 .btn {
@@ -933,29 +944,29 @@ button {
   }
 }
 
-/* Botão ver mais */
-.buttonVermais {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--gradient-primary);
-  color: var(--white-color);
-  padding: 1rem 2rem;      
-  border-radius: 50px;
-  font-weight: var(--font-medium);
-  font-size: 1.1rem;        
-  transition: var(--transition);
-  box-shadow: 0 4px 20px var(--shadow-color);
-  margin-bottom: 2rem;
-  margin-top: 0.5rem;
-}
+  /* Botão ver mais */
+  .buttonVermais {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient-primary);
+    color: var(--white-color);
+    padding: 1rem 2rem;      
+    border-radius: 50px;
+    font-weight: var(--font-medium);
+    font-size: 1.1rem;        
+    transition: var(--transition);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
 
-.buttonVermais:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--shadow-color);
-}
+  .buttonVermais:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+  }
 
-.buttonVermais i {
-  font-size: 1.2rem;          
-}
+  .buttonVermais i {
+    font-size: 1.2rem;          
+  }
 

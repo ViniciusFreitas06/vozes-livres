@@ -479,18 +479,20 @@ function verMais() {
   const itens = document.querySelectorAll(".gallery-item");
   const btn = document.getElementById("btnVerMais");
 
-  // Verifica se está escondido
+  const maxItens = window.innerWidth < 768 ? 4 : 8;
+
   if (btn.innerText === "Mostrar mais") {
     itens.forEach(item => (item.style.display = "block"));
     btn.innerText = "Mostrar menos";
   } else {
     itens.forEach((item, i) => {
-      item.style.display = i < 8 ? "block" : "none"; // mantém só 8
+      item.style.display = i < maxItens ? "block" : "none";
     });
     btn.innerText = "Mostrar mais";
   }
 }
 
 document.getElementById("btnVerMais").addEventListener("click", verMais);
+
 
 
