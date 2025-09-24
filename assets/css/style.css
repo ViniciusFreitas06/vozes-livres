@@ -970,3 +970,15 @@ button {
     font-size: 1.2rem;          
   }
 
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem; /* espaço entre logo e texto */
+}
+
+.logo {
+    width: 60px;   /* ajusta o tamanho da logo */
+    height: auto;  /* mantém proporção */
+    padding-top: 8px
+}
