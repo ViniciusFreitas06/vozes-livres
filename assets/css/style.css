@@ -214,7 +214,7 @@ button {
 .logo-placeholder {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.0rem;
   color: var(--primary-color);
   font-weight: var(--font-bold);
   font-size: 1.25rem;
