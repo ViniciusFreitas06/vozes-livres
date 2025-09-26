@@ -207,6 +207,10 @@ button {
   align-items: center;
 }
 
+.nav__logo span{
+  font-size: 1.1rem;
+}
+
 .logo-placeholder {
   display: flex;
   align-items: center;
