@@ -214,7 +214,7 @@ button {
 .logo-placeholder {
   display: flex;
   align-items: center;
-  gap: 0.0rem;
+
   color: var(--primary-color);
   font-weight: var(--font-bold);
   font-size: 1.25rem;
@@ -983,12 +983,24 @@ button {
 .logo-placeholder {
     display: flex;
     align-items: center;
-    gap: 0.3rem; /* espaço entre logo e texto */
+    gap: 10px;
 }
 
 .logo {
     width: 60px;   /* ajusta o tamanho da logo */
     height: auto;  /* mantém proporção */
-    padding-top: 8px
+    padding-top: 1px
 }
 
+.faculdade-logo{
+  width: 6rem;
+  height: auto;
+  padding-top: 9rem;
+}
+
+.footer__right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px; /* espaço entre o texto e a logo */
+}
