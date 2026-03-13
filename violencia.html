@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Por que falar sobre violência contra a mulher? - Vozes Livres, Mulheres Seguras</title>
-    <meta name="description" content="Entenda a importância de falar sobre violência contra a mulher e conheça os tipos de violência">
+    <meta name="description"
+        content="Entenda a importância de falar sobre violência contra a mulher e conheça os tipos de violência">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
         .logo-placeholder {
             display: flex;
             align-items: center;
-            gap: 10px; /* espaço entre logo e texto */
+            gap: 10px;
+            /* espaço entre logo e texto */
         }
 
         .logo-placeholder span {
@@ -23,21 +25,24 @@
         }
 
         .logo {
-            width: 60px;   /* ajusta o tamanho da logo */
-            height: auto;  /* mantém proporção */
+            width: 60px;
+            /* ajusta o tamanho da logo */
+            height: auto;
+            /* mantém proporção */
         }
+
         .violencia-page {
             padding-top: 6rem;
             min-height: 100vh;
         }
-        
+
         .violencia-hero {
             background: linear-gradient(135deg, #6A0DAD 0%, #C084FC 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
         }
-        
+
         .violencia-hero h1 {
             color: #FFFF;
             font-size: 2.5rem;
@@ -45,22 +50,22 @@
             margin-bottom: 1rem;
             line-height: 1.2;
         }
-        
+
         .violencia-hero p {
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .content-section {
             padding: 4rem 0;
         }
-        
+
         .content-section:nth-child(even) {
             background-color: #f8fafc;
         }
-        
+
         .section-title {
             font-size: 2rem;
             font-weight: 600;
@@ -68,7 +73,7 @@
             margin-bottom: 2rem;
             text-align: center;
         }
-        
+
         .content-text {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -76,7 +81,7 @@
             margin-bottom: 1.5rem;
             text-align: justify;
         }
-        
+
         .stats-highlight {
             background: linear-gradient(135deg, #e53e3e 0%, #fc8181 100%);
             color: white;
@@ -85,33 +90,33 @@
             margin: 2rem 0;
             text-align: center;
         }
-        
+
         .stats-highlight h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .violence-types {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .violence-card {
             background: white;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-left: 4px solid #6A0DAD;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .violence-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
-        
+
         .violence-card h3 {
             color: #6A0DAD;
             font-size: 1.3rem;
@@ -121,36 +126,36 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .violence-card .icon {
             font-size: 1.5rem;
         }
-        
+
         .violence-card p {
             color: #4a5568;
             line-height: 1.6;
             margin-bottom: 1rem;
             text-align: justify;
         }
-        
+
         .examples {
             background-color: #f7fafc;
             padding: 1rem;
             border-radius: 8px;
             border-left: 3px solid #e53e3e;
         }
-        
+
         .examples strong {
             color: #e53e3e;
         }
-        
+
         .quote-section {
             background: linear-gradient(135deg, #6A0DAD 0%, #C084FC 100%);
             color: white;
             padding: 3rem 0;
             text-align: justify;
         }
-        
+
         .quote-text {
             font-size: 1.3rem;
             font-style: italic;
@@ -159,48 +164,48 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .quote-author {
             font-size: 1.1rem;
             opacity: 0.9;
         }
-        
+
         .references {
             background-color: #f8fafc;
             padding: 3rem 0;
         }
-        
+
         .references h3 {
             color: #6A0DAD;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
-        
+
         .references ul {
             list-style: none;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .references li {
             margin-bottom: 1rem;
             padding: 1rem;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        
+
         .references a {
             color: #6A0DAD;
             text-decoration: none;
             word-break: break-all;
         }
-        
+
         .references a:hover {
             text-decoration: underline;
         }
-        
+
         .back-button {
             display: inline-flex;
             align-items: center;
@@ -214,40 +219,41 @@
             transition: background-color 0.3s ease;
             margin-bottom: 2rem;
         }
-        
+
         .back-button:hover {
             background: #5a0b8a;
         }
-        
+
         @media (max-width: 768px) {
             .violencia-hero h1 {
                 font-size: 2rem;
             }
-            
+
             .violence-types {
                 grid-template-columns: 1fr;
             }
-            
+
             .content-text {
                 text-align: justify;
             }
         }
 
-        .faculdade-logo{
+        .faculdade-logo {
             width: 6rem;
             height: auto;
             padding-top: 9rem;
         }
 
-            .footer__right {
+        .footer__right {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            gap: 20px; /* espaço entre o texto e a logo */
+            gap: 20px;
+            /* espaço entre o texto e a logo */
         }
-
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header" id="header">
@@ -255,36 +261,40 @@
             <div class="nav__logo">
                 <div class="logo-placeholder">
                     <img src="/assets/images/logo roxa.png" alt="Vozes Livres" class="logo">
-                     <span>Vozes Livres, Mulheres Seguras</span>
+                    <span>Vozes Livres, Mulheres Seguras</span>
                 </div>
             </div>
-            
+
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Início</a>
+                        <a href="#inicio" class="nav__link active-link">Início</a>
                     </li>
                     <li class="nav__item">
-                        <a href="index.html#sobre" class="nav__link">Sobre</a>
+                        <a href="#sobre" class="nav__link">Sobre</a>
                     </li>
                     <li class="nav__item">
-                        <a href="index.html#objetivos" class="nav__link">Objetivos</a>
+                        <a href="#objetivos" class="nav__link">Objetivos</a>
                     </li>
                     <li class="nav__item">
-                        <a href="violencia.html" class="nav__link active-link">Violência</a>
+                        <a href="violencia.html" class="nav__link">Violência</a>
                     </li>
                     <li class="nav__item">
-                        <a href="index.html#premiacoes" class="nav__link">Destaques</a>
+                        <a href="noticias.html" class="nav__link">Notícias</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#premiacoes" class="nav__link">Destaques</a>
                     </li>
                     <!-- <li class="nav__item">
-                        <a href="index.html#contato" class="nav__link">Contato</a>
+                        <a href="#contato" class="nav__link">Contato</a>
                     </li> -->
                 </ul>
                 <div class="nav__close" id="nav-close">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
-            
+            </div>
+
             <div class="nav__toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -308,33 +318,48 @@
                     <i class="fas fa-arrow-left"></i>
                     Voltar ao início
                 </a>
-                
+
                 <div class="content-text">
-                    A violência doméstica e familiar contra a mulher, de acordo com o art. 5º da Lei Maria da Penha, é entendida como “qualquer ação ou omissão baseada no gênero que lhe cause morte, lesão, sofrimento físico, sexual ou psicológico e dano moral ou patrimonial”. Porém, apesar do avanço social na elaboração de leis e medidas e o aumento das discussões acerca do tema, persistem ainda diversos desafios históricos e culturais que devem ser superados.
+                    A violência doméstica e familiar contra a mulher, de acordo com o art. 5º da Lei Maria da Penha, é
+                    entendida como “qualquer ação ou omissão baseada no gênero que lhe cause morte, lesão, sofrimento
+                    físico, sexual ou psicológico e dano moral ou patrimonial”. Porém, apesar do avanço social na
+                    elaboração de leis e medidas e o aumento das discussões acerca do tema, persistem ainda diversos
+                    desafios históricos e culturais que devem ser superados.
                 </div>
-                
+
                 <div class="stats-highlight">
                     <h3>Dados Alarmantes - 2024</h3>
-                    <p>Segundo o 19º Anuário Brasileiro de Segurança Pública, em 2024, houve um aumento nos índices de diversas formas de violência contra a mulher. Dentre eles, encontram-se a violência psicológica com um aumento de 6,3% e o feminicídio com 0,7%.</p>
+                    <p>Segundo o 19º Anuário Brasileiro de Segurança Pública, em 2024, houve um aumento nos índices de
+                        diversas formas de violência contra a mulher. Dentre eles, encontram-se a violência psicológica
+                        com um aumento de 6,3% e o feminicídio com 0,7%.</p>
                 </div>
-                
+
                 <div class="content-text">
-                    Tais dados demonstram que os reflexos de uma estrutura social marcada pelas relações de poder entre homens e mulheres ainda geram impactos emocionais, psicológicos e sociais para inúmeras mulheres e famílias.
+                    Tais dados demonstram que os reflexos de uma estrutura social marcada pelas relações de poder entre
+                    homens e mulheres ainda geram impactos emocionais, psicológicos e sociais para inúmeras mulheres e
+                    famílias.
                 </div>
-                
+
                 <div class="content-text">
-                    Devido a essa construção cultural, por muito tempo a violência contra a mulher foi um tema banalizado e, portanto, invisível. Entretanto, nos últimos anos a pauta vem se tornando cada vez mais frequente, uma das razões para o aumento das denúncias. 
+                    Devido a essa construção cultural, por muito tempo a violência contra a mulher foi um tema
+                    banalizado e, portanto, invisível. Entretanto, nos últimos anos a pauta vem se tornando cada vez
+                    mais frequente, uma das razões para o aumento das denúncias.
                 </div>
                 <div class="content-text">
-                    De acordo com Paulo Freire, citado por Cabral e cols. (2015), um dos passos para a transformação social é a quebra da “cultura do silêncio”, condição na qual os indivíduos assumem um papel passivo diante de questões sociais. A conscientização é ferramenta primordial nessa luta pois, através da fala, é possível dar voz às vítimas, visibilidade ao problema e contribuir por uma sociedade mais segura para todos.
-            </div>
+                    De acordo com Paulo Freire, citado por Cabral e cols. (2015), um dos passos para a transformação
+                    social é a quebra da “cultura do silêncio”, condição na qual os indivíduos assumem um papel passivo
+                    diante de questões sociais. A conscientização é ferramenta primordial nessa luta pois, através da
+                    fala, é possível dar voz às vítimas, visibilidade ao problema e contribuir por uma sociedade mais
+                    segura para todos.
+                </div>
         </section>
 
         <!-- Quote Section -->
         <section class="quote-section">
             <div class="container">
                 <div class="quote-text">
-                    "Somente por meio da educação poderemos ter, a longo prazo, uma sociedade menos machista e mais igualitária"    
+                    "Somente por meio da educação poderemos ter, a longo prazo, uma sociedade menos machista e mais
+                    igualitária"
                 </div>
                 <div class="quote-author">- Maria da Penha</div>
             </div>
@@ -344,39 +369,47 @@
         <section class="content-section">
             <div class="container">
                 <h2 class="section-title">Fique Atento - Tipos de Violência</h2>
-                
+
                 <div class="violence-types">
                     <div class="violence-card">
                         <h3>
                             <i class="fas fa-brain icon"></i>
                             Violência Psicológica
                         </h3>
-                        <p>Todo ato que cause danos ao emocional da vítima e interfira em seu desenvolvimento pessoal, social e profissional, muitas vezes disfarçada por um ”falso amor”, causando, em muitos casos, isolamento social e transtornos como depressão, ansiedade e transtorno de estresse pós-traumático.</p>
+                        <p>Todo ato que cause danos ao emocional da vítima e interfira em seu desenvolvimento pessoal,
+                            social e profissional, muitas vezes disfarçada por um ”falso amor”, causando, em muitos
+                            casos, isolamento social e transtornos como depressão, ansiedade e transtorno de estresse
+                            pós-traumático.</p>
                         <div class="examples">
-                            <strong>Exemplos:</strong> Críticas constantes, humilhação, manipulação, ameaças, perseguição, entre outros.
+                            <strong>Exemplos:</strong> Críticas constantes, humilhação, manipulação, ameaças,
+                            perseguição, entre outros.
                         </div>
                     </div>
-                    
+
                     <div class="violence-card">
                         <h3>
                             <i class="fas fa-coins icon"></i>
                             Violência Patrimonial
                         </h3>
-                        <p>Retenção ou destruição de bens que contenham valor econômico ou pessoal, direitos e recursos, muitas vezes necessários para sua sobrevivência.</p>
+                        <p>Retenção ou destruição de bens que contenham valor econômico ou pessoal, direitos e recursos,
+                            muitas vezes necessários para sua sobrevivência.</p>
                         <div class="examples">
-                            <strong>Exemplos:</strong> Subtração de documento, negação de pensão, quebra de celular, entre outros.
+                            <strong>Exemplos:</strong> Subtração de documento, negação de pensão, quebra de celular,
+                            entre outros.
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="violence-card">
                         <h3>
                             <i class="fas fa-user-shield icon"></i>
                             Violência Sexual
                         </h3>
-                        <p>Toda ação que coaja a vítima a realizar ou presenciar qualquer relação sexual não desejada, e, a limitação da vida sexual e reprodutiva.</p>
+                        <p>Toda ação que coaja a vítima a realizar ou presenciar qualquer relação sexual não desejada,
+                            e, a limitação da vida sexual e reprodutiva.</p>
                         <div class="examples">
-                            <strong>Exemplos:</strong> Estupro, assédio, imposição do uso de métodos contraceptivos, realização de abortos e matrimônios, entre outros.
+                            <strong>Exemplos:</strong> Estupro, assédio, imposição do uso de métodos contraceptivos,
+                            realização de abortos e matrimônios, entre outros.
                         </div>
                     </div>
 
@@ -390,7 +423,7 @@
                             <strong>Exemplos:</strong> Difamação, calúnia, acusações infundadas, entre outros.
                         </div>
                     </div>
-                    
+
                     <div class="violence-card">
                         <h3>
                             <i class="fas fa-hand-paper icon"></i>
@@ -411,23 +444,39 @@
                 <h3>Referências</h3>
                 <ul>
                     <li>
-                        <a href="https://seer.ufsj.edu.br/revista_ppp/article/view/Cabral%2C%20Ribeiro%2C%20Silva%2C%20Bomfim/1060" target="_blank" rel="noopener noreferrer">
-                            CABRAL, J; RIBEIRO, A; SILVA, M; BOMFIM, L. Vygotsky e Freire: os conceitos de “consciência” e “conscientização”. Revista Pesquisas e Práticas Psicossociais, São João del-Rei, 2015. Disponível em: https://seer.ufsj.edu.br/revista_ppp/article/view/Cabral%2C%20Ribeiro%2C%20Silva%2C%20Bomfim/1060 . Acesso em: 8 set. 2025.
+                        <a href="https://seer.ufsj.edu.br/revista_ppp/article/view/Cabral%2C%20Ribeiro%2C%20Silva%2C%20Bomfim/1060"
+                            target="_blank" rel="noopener noreferrer">
+                            CABRAL, J; RIBEIRO, A; SILVA, M; BOMFIM, L. Vygotsky e Freire: os conceitos de “consciência”
+                            e “conscientização”. Revista Pesquisas e Práticas Psicossociais, São João del-Rei, 2015.
+                            Disponível em:
+                            https://seer.ufsj.edu.br/revista_ppp/article/view/Cabral%2C%20Ribeiro%2C%20Silva%2C%20Bomfim/1060
+                            . Acesso em: 8 set. 2025.
                         </a>
                     </li>
                     <li>
-                        <a href="https://direito.ufpr.br/portal/wp-content/uploads/2014/12/Artigo-B%C3%A1rbara-Cunha-classificado-em-7%C2%BA-lugar.pdf" target="_blank" rel="noopener noreferrer">
-                            CUNHA, M. Violência contra a mulher, direito e patriarcado: perspectivas de combate à violência de gênero. São Paulo: Universidade Federal do Paraná, 2014. Disponível em: https://direito.ufpr.br/portal/wp-content/uploads/2014/12/Artigo-B%C3%A1rbara-Cunha-classificado-em-7%C2%BA-lugar.pdf . Acesso em: 8 set. 2025.
+                        <a href="https://direito.ufpr.br/portal/wp-content/uploads/2014/12/Artigo-B%C3%A1rbara-Cunha-classificado-em-7%C2%BA-lugar.pdf"
+                            target="_blank" rel="noopener noreferrer">
+                            CUNHA, M. Violência contra a mulher, direito e patriarcado: perspectivas de combate à
+                            violência de gênero. São Paulo: Universidade Federal do Paraná, 2014. Disponível em:
+                            https://direito.ufpr.br/portal/wp-content/uploads/2014/12/Artigo-B%C3%A1rbara-Cunha-classificado-em-7%C2%BA-lugar.pdf
+                            . Acesso em: 8 set. 2025.
                         </a>
                     </li>
                     <li>
-                        <a href="https://forumseguranca.org.br/wp-content/uploads/2025/07/anuario-2025.pdf" target="_blank" rel="noopener noreferrer">
-                            FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA. 19º Anuário Brasileiro de Segurança Pública. São Paulo: Fórum Brasileiro de Segurança Pública, 2025. Disponível em: https://forumseguranca.org.br/wp-content/uploads/2025/07/anuario-2025.pdf . Acesso em: 8 set. 2025.
+                        <a href="https://forumseguranca.org.br/wp-content/uploads/2025/07/anuario-2025.pdf"
+                            target="_blank" rel="noopener noreferrer">
+                            FÓRUM BRASILEIRO DE SEGURANÇA PÚBLICA. 19º Anuário Brasileiro de Segurança Pública. São
+                            Paulo: Fórum Brasileiro de Segurança Pública, 2025. Disponível em:
+                            https://forumseguranca.org.br/wp-content/uploads/2025/07/anuario-2025.pdf . Acesso em: 8
+                            set. 2025.
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.institutomariadapenha.org.br/lei-11340/tipos-de-violencia.html" target="_blank" rel="noopener noreferrer">
-                            INSTITUTO MARIA DA PENHA. Tipos de violência. São Paulo, 2023. Disponível em: https://www.institutomariadapenha.org.br/lei-11340/tipos-de-violencia.html. Acesso em: 8 set. 2025.
+                        <a href="https://www.institutomariadapenha.org.br/lei-11340/tipos-de-violencia.html"
+                            target="_blank" rel="noopener noreferrer">
+                            INSTITUTO MARIA DA PENHA. Tipos de violência. São Paulo, 2023. Disponível em:
+                            https://www.institutomariadapenha.org.br/lei-11340/tipos-de-violencia.html. Acesso em: 8
+                            set. 2025.
                         </a>
                     </li>
                 </ul>
@@ -440,7 +489,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                
+
                 <!-- Logo principal -->
                 <div class="footer__logo">
                     <div class="logo-placeholder">
@@ -448,17 +497,22 @@
                         <span>Vozes Livres, Mulheres Seguras</span>
                     </div>
                     <ul>
-                        <li><p class="footer__description">Curso de Psicologia</p></li>
-                        <li><p class="footer__description">Faculdade Santa Lúcia</p></li>         
+                        <li>
+                            <p class="footer__description">Curso de Psicologia</p>
+                        </li>
+                        <li>
+                            <p class="footer__description">Faculdade Santa Lúcia</p>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <!-- Links -->
                 <div class="footer__links">
                     <h4 class="footer__title">Links Rápidos</h4>
                     <ul class="footer__list">
                         <li><a href="#inicio" class="footer__link">Início</a></li>
-                        <li><a href="https://www.instagram.com/vozeslivres_mulheresseguras" class="footer__link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.instagram.com/vozeslivres_mulheresseguras" class="footer__link"
+                                target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
                     </ul>
                 </div>
 
@@ -471,24 +525,25 @@
                         </p>
                         <div class="emergency__numbers">
                             <span class="emergency__number">180</span>
-                            <a href="https://www.gov.br/mulheres/pt-br/ligue180/ligue-180" target="_blank" rel="noopener noreferrer">
-                                <span class="emergency__label">Central de Atendimento à Mulher</span>    
+                            <a href="https://www.gov.br/mulheres/pt-br/ligue180/ligue-180" target="_blank"
+                                rel="noopener noreferrer">
+                                <span class="emergency__label">Central de Atendimento à Mulher</span>
                             </a>
                         </div>
                         <div class="emergency__numbers">
                             <span class="emergency__number">190</span>
-                            <a href="https://policiamilitar.sp.gov.br/unidades/ccomsoc/aplicativos/" target="_blank" rel="noopener noreferrer">
-                                <span class="emergency__label">Polícia Militar</span>    
+                            <a href="https://policiamilitar.sp.gov.br/unidades/ccomsoc/aplicativos/" target="_blank"
+                                rel="noopener noreferrer">
+                                <span class="emergency__label">Polícia Militar</span>
                             </a>
                         </div>
                     </div>
 
-                    <img src="/assets/images/logo_faculdade_branca.png" 
-                        alt="Logo Faculdade Santa Lúcia" 
+                    <img src="/assets/images/logo_faculdade_branca.png" alt="Logo Faculdade Santa Lúcia"
                         class="faculdade-logo">
                 </div>
             </div>
-            
+
             <!-- Rodapé inferior -->
             <div class="footer__bottom">
                 <p class="footer__copy">
@@ -501,5 +556,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
-</html>
 
+</html>
