@@ -378,6 +378,23 @@ button {
   margin-bottom: var(--mb-2);
 }
 
+.hero__button--secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: var(--white-color);
+  box-shadow: none;
+  margin-left: 0;
+}
+
+.hero__button--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white-color);
+}
+
+.hero__content .button + .button {
+  margin-left: 0.75rem;
+}
+
 .hero__image {
   display: flex;
   justify-content: center;

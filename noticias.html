@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias e Acontecimentos - Vozes Livres, Mulheres Seguras</title>
+    <meta name="description" content="Acompanhe as últimas notícias e acontecimentos do programa Vozes Livres, Mulheres Seguras">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/images/logo roxa.png">
+    <style>
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-placeholder span {
+            font-size: 1rem;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+
+        /* ===== HERO NOTÍCIAS ===== */
+        .noticias-page {
+            padding-top: 4rem;
+            min-height: 100vh;
+        }
+
+        .noticias-hero {
+            background: linear-gradient(135deg, #6A0DAD 0%, #C084FC 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .noticias-hero h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .noticias-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SEÇÃO DE NOTÍCIAS ===== */
+        .noticias-section {
+            padding: 4rem 0;
+            background: var(--background-color);
+        }
+
+        .noticias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* ===== CARD DE NOTÍCIA ===== */
+        .noticia-card {
+            background: var(--white-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .noticia-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(106, 13, 173, 0.15);
+        }
+
+        .noticia-card__img-wrapper {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            background: var(--primary-lighter);
+        }
+
+        .noticia-card__img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .noticia-card:hover .noticia-card__img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .noticia-card__img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-light);
+            color: var(--primary-color);
+            gap: 0.5rem;
+        }
+
+        .noticia-card__img-placeholder i {
+            font-size: 2.5rem;
+            opacity: 0.6;
+        }
+
+        .noticia-card__body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .noticia-card__meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .noticia-card__date {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .noticia-card__date i {
+            color: var(--primary-light);
+        }
+
+        .noticia-card__tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.2rem 0.75rem;
+            border-radius: 20px;
+            background: var(--primary-lighter);
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .noticia-card__title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        .noticia-card__text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        /* ===== ESTADO VAZIO ===== */
+        .noticias-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+        }
+
+        .noticias-empty i {
+            font-size: 3.5rem;
+            color: var(--primary-lighter);
+            margin-bottom: 1rem;
+        }
+
+        .noticias-empty p {
+            font-size: 1rem;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .noticias-hero h1 {
+                font-size: 1.8rem;
+            }
+            .noticias-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <div class="logo-placeholder">
+                    <img src="/assets/images/logo roxa.png" alt="Vozes Livres" class="logo">
+                    <span>Vozes Livres, Mulheres Seguras</span>
+                </div>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html#inicio" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#sobre" class="nav__link">Sobre</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#objetivos" class="nav__link">Objetivos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="violencia.html" class="nav__link">Violência</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="noticias.html" class="nav__link active-link">Notícias</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#premiacoes" class="nav__link">Destaques</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="noticias-page">
+
+        <!-- Hero -->
+        <div class="noticias-hero">
+            <div class="container">
+                <h1><i class="fas fa-newspaper" style="margin-right: 0.5rem;"></i>Notícias e Acontecimentos</h1>
+                <p>Acompanhe as últimas novidades, eventos e conquistas do programa Vozes Livres, Mulheres Seguras.</p>
+            </div>
+        </div>
+
+        <!-- Grade de notícias -->
+        <section class="noticias-section">
+            <div class="container">
+
+                <div class="noticias-grid">
+
+                    <!-- 
+                    =====================================================
+                    COMO ADICIONAR UMA NOVA NOTÍCIA:
+                    Copie o bloco abaixo, cole acima dos outros cards
+                    e preencha os campos desejados.
+                    =====================================================
+
+                    <article class="noticia-card">
+                        <div class="noticia-card__img-wrapper">
+                            <img src="assets/images/NOME_DA_IMAGEM.jpeg" alt="Descrição da imagem">
+                        </div>
+                        <div class="noticia-card__body">
+                            <div class="noticia-card__meta">
+                                <span class="noticia-card__date">
+                                    <i class="fas fa-calendar-alt"></i> DD/MM/AAAA
+                                </span>
+                                <span class="noticia-card__tag">Categoria</span>
+                            </div>
+                            <h2 class="noticia-card__title">Título da notícia aqui</h2>
+                            <p class="noticia-card__text">
+                                Descrição breve do acontecimento ou notícia.
+                            </p>
+                        </div>
+                    </article>
+                    -->
+
+                    <!-- EXEMPLO — remova ou edite quando quiser -->
+                    <article class="noticia-card">
+                        <div class="noticia-card__img-wrapper">
+                            <img src="assets/images/premio_duda.jpeg" alt="Menção Honrosa CNJ 2025">
+                        </div>
+                        <div class="noticia-card__body">
+                            <div class="noticia-card__meta">
+                                <span class="noticia-card__date">
+                                    <i class="fas fa-calendar-alt"></i> 2025
+                                </span>
+                                <span class="noticia-card__tag">Premiação</span>
+                            </div>
+                            <h2 class="noticia-card__title">Menção Honrosa no Prêmio Juíza Viviane do Amaral — CNJ</h2>
+                            <p class="noticia-card__text">
+                                O programa foi contemplado com menção honrosa, correspondente ao terceiro lugar no país na categoria Produção Acadêmica, no Prêmio Juíza Viviane do Amaral, promovido pelo Conselho Nacional de Justiça.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="noticia-card">
+                        <div class="noticia-card__img-wrapper">
+                            <img src="assets/images/img_gti.jpeg" alt="GTI Mogi Mirim">
+                        </div>
+                        <div class="noticia-card__body">
+                            <div class="noticia-card__meta">
+                                <span class="noticia-card__date">
+                                    <i class="fas fa-calendar-alt"></i> 2025
+                                </span>
+                                <span class="noticia-card__tag">Evento</span>
+                            </div>
+                            <h2 class="noticia-card__title">Participação no Evento do GTI de Mogi Mirim</h2>
+                            <p class="noticia-card__text">
+                                O programa participou do evento do Grupo de Trabalho Interinstitucional de Proteção e Enfrentamento à Violência contra a Mulher em Mogi Mirim — SP, reforçando a articulação com a rede de atendimento local.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="noticia-card">
+                        <div class="noticia-card__img-wrapper">
+                            <img src="assets/images/apresentacao2.jpeg" alt="Faculdade Aberta">
+                        </div>
+                        <div class="noticia-card__body">
+                            <div class="noticia-card__meta">
+                                <span class="noticia-card__date">
+                                    <i class="fas fa-calendar-alt"></i> Outubro 2024
+                                </span>
+                                <span class="noticia-card__tag">Apresentação</span>
+                            </div>
+                            <h2 class="noticia-card__title">Lançamento na Semana da Faculdade Aberta</h2>
+                            <p class="noticia-card__text">
+                                O programa teve sua primeira apresentação durante a Semana da Faculdade Aberta, despertando o interesse da juíza Dra. Adriana Barrea e dando início à trajetória de palestras em instituições da região.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+                <!-- Fim da grade -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <div class="logo-placeholder">
+                        <img src="/assets/images/logo branca.png" alt="Vozes Livres" class="logo">
+                        <span>Vozes Livres, Mulheres Seguras</span>
+                    </div>
+                    <ul>
+                        <li><p class="footer__description">Curso de Psicologia</p></li>
+                        <li><p class="footer__description">Faculdade Santa Lúcia</p></li>
+                    </ul>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__title">Links Rápidos</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html#inicio" class="footer__link">Início</a></li>
+                        <li><a href="https://www.instagram.com/vozeslivres_mulheresseguras" class="footer__link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__right">
+                    <div class="footer__emergency">
+                        <h4 class="footer__title">Emergência</h4>
+                        <p class="footer__emergency-text">Em caso de violência, ligue:</p>
+                        <div class="emergency__numbers">
+                            <span class="emergency__number">180</span>
+                            <a href="https://www.gov.br/mulheres/pt-br/ligue180/ligue-180" target="_blank" rel="noopener noreferrer">
+                                <span class="emergency__label">Central de Atendimento à Mulher</span>
+                            </a>
+                        </div>
+                        <div class="emergency__numbers">
+                            <span class="emergency__number">190</span>
+                            <a href="https://policiamilitar.sp.gov.br/unidades/ccomsoc/aplicativos/" target="_blank" rel="noopener noreferrer">
+                                <span class="emergency__label">Polícia Militar</span>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="/assets/images/logo_faculdade_branca.png" alt="Logo Faculdade Santa Lúcia" class="faculdade-logo">
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; 2025 Vozes Livres, Mulheres Seguras. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
+
+        if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+        if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+    </script>
+</body>
+</html>
