@@ -56,17 +56,88 @@
             margin: 0 auto;
         }
 
-        /* ===== SEÇÃO DE NOTÍCIAS ===== */
+        /* ===== SEÇÃO PRINCIPAL ===== */
         .noticias-section {
             padding: 4rem 0;
             background: var(--background-color);
         }
 
+        /* ===== BANNER MAPAS DE VIOLÊNCIA ===== */
+        .mapas-banner {
+            background: linear-gradient(135deg, #3C3489 0%, #6A0DAD 60%, #9333ea 100%);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .mapas-banner__inner {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .mapas-banner__icon {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            flex-shrink: 0;
+        }
+
+        .mapas-banner__text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .mapas-banner__text h3 {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .mapas-banner__text p {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .mapas-banner__btns {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .mapa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.15rem;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .mapa-btn:hover {
+            background: rgba(255, 255, 255, 0.28);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .mapa-btn i {
+            font-size: 0.95rem;
+        }
+
+        /* ===== GRID DE NOTÍCIAS ===== */
         .noticias-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         /* ===== CARD DE NOTÍCIA ===== */
@@ -101,23 +172,6 @@
 
         .noticia-card:hover .noticia-card__img-wrapper img {
             transform: scale(1.05);
-        }
-
-        .noticia-card__img-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-light);
-            color: var(--primary-color);
-            gap: 0.5rem;
-        }
-
-        .noticia-card__img-placeholder i {
-            font-size: 2.5rem;
-            opacity: 0.6;
         }
 
         .noticia-card__body {
@@ -172,6 +226,203 @@
             flex: 1;
         }
 
+        /* ===== BIBLIOTECA LATERAL — DESKTOP ===== */
+        .noticias-layout {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .biblioteca-sidebar {
+            background: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(106, 13, 173, 0.1);
+            position: sticky;
+            top: 5rem;
+        }
+
+        .biblioteca-header {
+            background: #6A0DAD;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .biblioteca-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .biblioteca-header i {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .biblioteca-header h3 {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .biblioteca-close-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .biblioteca-body {
+            padding: 0.4rem 0.7rem 0.7rem;
+        }
+
+        .biblioteca-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .biblioteca-item a {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.45rem;
+            padding: 0.55rem 0.3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .biblioteca-item a:hover {
+            background: rgba(106, 13, 173, 0.06);
+        }
+
+        .bi-icon {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            margin-top: 4px;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .biblioteca-item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.35;
+            display: block;
+        }
+
+        .biblioteca-item-source {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 1px;
+            display: block;
+        }
+
+        .biblioteca-divider {
+            border: none;
+            border-top: 1px solid rgba(106, 13, 173, 0.07);
+            margin: 0 0.3rem;
+        }
+
+        /* ===== BOTÃO FLUTUANTE MOBILE ===== */
+        .biblioteca-fab {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.25rem;
+            z-index: 900;
+            background: #6A0DAD;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 0.65rem 1.1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(106, 13, 173, 0.35);
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+
+        .biblioteca-fab:hover { background: #5a0b95; transform: scale(1.04); }
+        .biblioteca-fab i { font-size: 0.9rem; }
+
+        /* ===== DRAWER MOBILE ===== */
+        .biblioteca-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .biblioteca-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .biblioteca-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 80%;
+            max-width: 300px;
+            background: var(--white-color);
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 16px 0 0 16px;
+        }
+
+        .biblioteca-drawer.active {
+            transform: translateX(0);
+        }
+
+        .biblioteca-drawer .biblioteca-header {
+            padding: 1rem 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .biblioteca-drawer .biblioteca-close-btn {
+            display: flex;
+        }
+
+        .biblioteca-drawer .biblioteca-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 0.5rem 0.9rem 1rem;
+        }
+
+        .biblioteca-drawer .biblioteca-item a {
+            padding: 0.75rem 0.4rem;
+        }
+
+        .biblioteca-drawer .biblioteca-item-title {
+            font-size: 0.85rem;
+        }
+
+        .biblioteca-drawer .biblioteca-item-source {
+            font-size: 0.72rem;
+        }
+
         /* ===== ESTADO VAZIO ===== */
         .noticias-empty {
             text-align: center;
@@ -185,18 +436,37 @@
             margin-bottom: 1rem;
         }
 
-        .noticias-empty p {
-            font-size: 1rem;
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 960px) {
+            .noticias-layout {
+                grid-template-columns: 1fr;
+            }
+            .biblioteca-sidebar {
+                display: none;
+            }
+            .biblioteca-fab {
+                display: flex !important;
+            }
         }
 
-        /* ===== RESPONSIVO ===== */
         @media (max-width: 768px) {
             .noticias-hero h1 {
                 font-size: 1.8rem;
             }
-
             .noticias-grid {
                 grid-template-columns: 1fr;
+            }
+            .mapas-banner__inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .mapas-banner__btns {
+                width: 100%;
+            }
+            .mapa-btn {
+                flex: 1;
+                justify-content: center;
             }
         }
     </style>
@@ -257,173 +527,297 @@
             </div>
         </div>
 
-        <!-- Grade de notícias -->
+        <!-- Seção principal -->
         <section class="noticias-section">
             <div class="container">
 
-                <div class="noticias-grid">
+                <!-- Banner Mapas de Violência -->
+                <div class="mapas-banner">
+                    <div class="mapas-banner__inner">
+                        <i class="fas fa-map-marked-alt mapas-banner__icon"></i>
+                        <div class="mapas-banner__text">
+                            <h3>Mapas de Violência</h3>
+                            <p>Acesse dados georreferenciados e painéis sobre violência contra a mulher no Brasil.</p>
+                        </div>
+                        <div class="mapas-banner__btns">
+                            <a href="https://www.senado.leg.br/institucional/datasenado/mapadaviolencia/#/inicio"
+                                target="_blank" rel="noopener noreferrer" class="mapa-btn">
+                                <i class="fas fa-map-pin"></i> Mapa da Violência · Senado
+                            </a>
+                            <a href="https://justica-em-numeros.cnj.jus.br/painel-violencia-contra-mulher/"
+                                target="_blank" rel="noopener noreferrer" class="mapa-btn">
+                                <i class="fas fa-chart-bar"></i> Painel CNJ · Justiça em Números
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            
-                    <article class="noticia-card">
-                        <a href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/03/12/violencia-contra-a-mulher-numero-de-pedidos-de-medidas-protetivas-mais-que-triplica-em-sumare.ghtml"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/noticia_EPTV.jpeg"
-                                    alt="Reportagem sobre medidas protetivas em Sumaré">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
-                                </div>
-                                <h2 class="noticia-card__title">
-                                    Pedidos de medidas protetivas mais que triplicam em Sumaré
-                                </h2>
-                                <p class="noticia-card__text">
-                                    Dados do Tribunal de Justiça de São Paulo mostram que os pedidos de medidas
-                                    protetivas passaram de 133 em 2024 para 470 em 2025 em Sumaré. O aumento reflete
-                                    maior busca por proteção judicial por parte das mulheres vítimas de violência.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
+                <!-- Layout: Notícias + Biblioteca -->
+                <div class="noticias-layout">
 
-                    <article class="noticia-card">
-                        <a href="https://www12.senado.leg.br/noticias/audios/2026/03/enfrentamento-a-violencia-contra-a-mulher-esta-na-pauta-do-plenario-nesta-semana"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/senado.jpeg"
-                                    alt="Debate no Senado sobre violência contra a mulher">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
-                                </div>
-                                <h2 class="noticia-card__title">
-                                    Senado discute projetos de combate à violência contra mulheres
-                                </h2>
-                                <p class="noticia-card__text">
-                                    O Senado Federal analisa projetos que reforçam o enfrentamento à violência contra
-                                    mulheres, incluindo propostas para monitoramento eletrônico de agressores e
-                                    políticas de combate ao discurso de ódio contra mulheres na internet.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="noticia-card">
-                        <a href="https://www.gov.br/conselho-nacional-de-saude/pt-br/assuntos/noticias/2026/marco/feminicidio-transfeminicidio-ou-lesbocidio-qualquer-violencia-contra-as-mulheres-e-inaceitavel"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/feminicidio.jpeg"
-                                    alt="Debate sobre feminicídio, transfeminicídio e lesbocídio">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
-                                </div>
-                                <h2 class="noticia-card__title">
-                                    Violência contra mulheres é inaceitável, alerta Conselho Nacional de Saúde
-                                </h2>
-                                <p class="noticia-card__text">
-                                    Debate promovido pelo Conselho Nacional de Saúde destaca que crimes como
-                                    feminicídio, transfeminicídio e lesbocídio refletem a violência de gênero no Brasil
-                                    e reforça a necessidade de políticas públicas para proteger todas as mulheres.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
+                    <!-- Grade de notícias -->
+                    <div class="noticias-grid">
 
-                    <article class="noticia-card">
-                        <a href="https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-03/saiba-o-que-e-misoginia-projeto-pode-criminalizar-discurso-de-odio"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/lei_misoginia.jpeg"
-                                    alt="Debate sobre feminicídio, transfeminicídio e lesbocídio">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
+                        <article class="noticia-card">
+                            <a href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/03/12/violencia-contra-a-mulher-numero-de-pedidos-de-medidas-protetivas-mais-que-triplica-em-sumare.ghtml"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/noticia_EPTV.jpeg"
+                                        alt="Reportagem sobre medidas protetivas em Sumaré">
                                 </div>
-                                <h2 class="noticia-card__title">
-                                    Saiba o que é misoginia; lei pode criminalizar discurso de ódio
-                                </h2>
-                                <p class="noticia-card__text">
-                                    Casos recentes de feminicídio, estupro de adolescentes e violência
-                                    doméstica voltaram a trazer atenção ao debate sobre a misoginia, tema que pode passar a ter previsão 
-                                    criminal específica caso um projeto de lei aprovado pelo Senado avance nas próximas etapas legislativas.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <article class="noticia-card">
-                        <a href="https://www.cnnbrasil.com.br/nacional/educacao-de-meninos-para-nova-masculinidade-comeca-em-casa-diz-especialista/"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/mae_filho.jpeg"
-                                    alt="Debate sobre feminicídio, transfeminicídio e lesbocídio">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Pedidos de medidas protetivas mais que triplicam em Sumaré
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        Dados do Tribunal de Justiça de São Paulo mostram que os pedidos de medidas
+                                        protetivas passaram de 133 em 2024 para 470 em 2025 em Sumaré. O aumento reflete
+                                        maior busca por proteção judicial por parte das mulheres vítimas de violência.
+                                    </p>
                                 </div>
-                                <h2 class="noticia-card__title">
-                                    Educação de meninos para “nova masculinidade” começa em casa, diz especialista
-                                </h2>
-                                <p class="noticia-card__text">
-                                    Em entrevista à CNN Rádio, no programa CNN Educação, o publicitário e criador do 
-                                    canal Papai Em Dobro, Ton Kohler, afirmou que existem desafios na educação de meninos 
-                                    diante do contexto social atual.
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <article class="noticia-card">
-                        <a href="https://portalpadrao.ufma.br/tvufma/noticias/professores-e-alunos-realizam-estudo-sobre-o-movimento-redpill-e-violencia-de-genero"
-                            target="_blank">
-                            <div class="noticia-card__img-wrapper">
-                                <img src="assets/images/alunos_professor.jpeg"
-                                    alt="Debate sobre feminicídio, transfeminicídio e lesbocídio">
-                            </div>
-                            <div class="noticia-card__body">
-                                <div class="noticia-card__meta">
-                                    <span class="noticia-card__date">
-                                        <i class="fas fa-calendar-alt"></i> 2026
-                                    </span>
-                                    <span class="noticia-card__tag">Notícia</span>
+                            </a>
+                        </article>
+
+                        <article class="noticia-card">
+                            <a href="https://www12.senado.leg.br/noticias/audios/2026/03/enfrentamento-a-violencia-contra-a-mulher-esta-na-pauta-do-plenario-nesta-semana"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/senado.jpeg"
+                                        alt="Debate no Senado sobre violência contra a mulher">
                                 </div>
-                                <h2 class="noticia-card__title">
-                                    Professores e alunos realizam estudo sobre o movimento Redpill e violência de gênero                           </h2>
-                                <p class="noticia-card__text">
-                                    Pesquisa sobre a violência de gênero e o movimento Redpill é feita por 
-                                    professores e alunos em escola de São Luís no Maranhão
-                                </p>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Senado discute projetos de combate à violência contra mulheres
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        O Senado Federal analisa projetos que reforçam o enfrentamento à violência contra
+                                        mulheres, incluindo propostas para monitoramento eletrônico de agressores e
+                                        políticas de combate ao discurso de ódio contra mulheres na internet.
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="noticia-card">
+                            <a href="https://www.gov.br/conselho-nacional-de-saude/pt-br/assuntos/noticias/2026/marco/feminicidio-transfeminicidio-ou-lesbocidio-qualquer-violencia-contra-as-mulheres-e-inaceitavel"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/feminicidio.jpeg"
+                                        alt="Debate sobre feminicídio, transfeminicídio e lesbocídio">
+                                </div>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Violência contra mulheres é inaceitável, alerta Conselho Nacional de Saúde
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        Debate promovido pelo Conselho Nacional de Saúde destaca que crimes como
+                                        feminicídio, transfeminicídio e lesbocídio refletem a violência de gênero no Brasil
+                                        e reforça a necessidade de políticas públicas para proteger todas as mulheres.
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="noticia-card">
+                            <a href="https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-03/saiba-o-que-e-misoginia-projeto-pode-criminalizar-discurso-de-odio"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/lei_misoginia.jpeg"
+                                        alt="Debate sobre misoginia e projeto de lei">
+                                </div>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Saiba o que é misoginia; lei pode criminalizar discurso de ódio
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        Casos recentes de feminicídio, estupro de adolescentes e violência
+                                        doméstica voltaram a trazer atenção ao debate sobre a misoginia, tema que pode passar a ter previsão
+                                        criminal específica caso um projeto de lei aprovado pelo Senado avance nas próximas etapas legislativas.
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="noticia-card">
+                            <a href="https://www.cnnbrasil.com.br/nacional/educacao-de-meninos-para-nova-masculinidade-comeca-em-casa-diz-especialista/"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/mae_filho.jpeg"
+                                        alt="Educação de meninos para nova masculinidade">
+                                </div>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Educação de meninos para "nova masculinidade" começa em casa, diz especialista
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        Em entrevista à CNN Rádio, no programa CNN Educação, o publicitário e criador do
+                                        canal Papai Em Dobro, Ton Kohler, afirmou que existem desafios na educação de meninos
+                                        diante do contexto social atual.
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="noticia-card">
+                            <a href="https://portalpadrao.ufma.br/tvufma/noticias/professores-e-alunos-realizam-estudo-sobre-o-movimento-redpill-e-violencia-de-genero"
+                                target="_blank">
+                                <div class="noticia-card__img-wrapper">
+                                    <img src="assets/images/alunos_professor.jpeg"
+                                        alt="Estudo sobre movimento Redpill e violência de gênero">
+                                </div>
+                                <div class="noticia-card__body">
+                                    <div class="noticia-card__meta">
+                                        <span class="noticia-card__date">
+                                            <i class="fas fa-calendar-alt"></i> 2026
+                                        </span>
+                                        <span class="noticia-card__tag">Notícia</span>
+                                    </div>
+                                    <h2 class="noticia-card__title">
+                                        Professores e alunos realizam estudo sobre o movimento Redpill e violência de gênero
+                                    </h2>
+                                    <p class="noticia-card__text">
+                                        Pesquisa sobre a violência de gênero e o movimento Redpill é feita por
+                                        professores e alunos em escola de São Luís no Maranhão.
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+
+                    </div>
+                    <!-- Fim da grade -->
+
+                    <!-- Coluna Biblioteca (desktop) -->
+                    <aside class="biblioteca-sidebar">
+                        <div class="biblioteca-header">
+                            <div class="biblioteca-header-left">
+                                <i class="fas fa-book-open"></i>
+                                <h3>Biblioteca</h3>
                             </div>
-                        </a>
-                    </article>
+                        </div>
+                        <div class="biblioteca-body">
+                            <ul class="biblioteca-list">
+                                <li class="biblioteca-item">
+                                    <a href="https://revista.uemg.br/gtic-malestar/article/view/10207" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-file-alt bi-icon"></i>
+                                        <div>
+                                            <span class="biblioteca-item-title">Artigo científico · Revista UEMG</span>
+                                            <span class="biblioteca-item-source">revista.uemg.br</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr class="biblioteca-divider">
+                                <li class="biblioteca-item">
+                                    <a href="https://periodicorease.pro.br/rease/article/view/22496" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-file-alt bi-icon"></i>
+                                        <div>
+                                            <span class="biblioteca-item-title">Artigo científico · Periódico REASE</span>
+                                            <span class="biblioteca-item-source">periodicorease.pro.br</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr class="biblioteca-divider">
+                                <li class="biblioteca-item">
+                                    <a href="https://rchunitau.com.br/index.php/rch/article/view/1203" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-file-alt bi-icon"></i>
+                                        <div>
+                                            <span class="biblioteca-item-title">Artigo científico · RCH Unitau</span>
+                                            <span class="biblioteca-item-source">rchunitau.com.br</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
 
                 </div>
-                <!-- Fim da grade -->
+                <!-- Fim do layout -->
 
             </div>
         </section>
 
     </main>
+
+    <!-- Botão flutuante mobile -->
+    <button class="biblioteca-fab" id="biblioteca-fab" aria-label="Abrir Biblioteca de Artigos">
+        <i class="fas fa-book-open"></i> Biblioteca
+    </button>
+
+    <!-- Overlay + Drawer mobile -->
+    <div class="biblioteca-overlay" id="biblioteca-overlay"></div>
+    <div class="biblioteca-drawer" id="biblioteca-drawer" role="dialog" aria-label="Biblioteca de Artigos">
+        <div class="biblioteca-header">
+            <div class="biblioteca-header-left">
+                <i class="fas fa-book-open"></i>
+                <h3>Biblioteca de Artigos</h3>
+            </div>
+            <button class="biblioteca-close-btn" id="biblioteca-close" aria-label="Fechar biblioteca">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="biblioteca-body">
+            <ul class="biblioteca-list">
+                <li class="biblioteca-item">
+                    <a href="https://revista.uemg.br/gtic-malestar/article/view/10207" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-alt bi-icon"></i>
+                        <div>
+                            <span class="biblioteca-item-title">Artigo científico · Revista UEMG</span>
+                            <span class="biblioteca-item-source">revista.uemg.br</span>
+                        </div>
+                    </a>
+                </li>
+                <hr class="biblioteca-divider">
+                <li class="biblioteca-item">
+                    <a href="https://periodicorease.pro.br/rease/article/view/22496" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-alt bi-icon"></i>
+                        <div>
+                            <span class="biblioteca-item-title">Artigo científico · Periódico REASE</span>
+                            <span class="biblioteca-item-source">periodicorease.pro.br</span>
+                        </div>
+                    </a>
+                </li>
+                <hr class="biblioteca-divider">
+                <li class="biblioteca-item">
+                    <a href="https://rchunitau.com.br/index.php/rch/article/view/1203" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-alt bi-icon"></i>
+                        <div>
+                            <span class="biblioteca-item-title">Artigo científico · RCH Unitau</span>
+                            <span class="biblioteca-item-source">rchunitau.com.br</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -486,13 +880,64 @@
     </footer>
 
     <script>
-        // Menu mobile
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const navClose = document.getElementById('nav-close');
+        document.addEventListener('DOMContentLoaded', function () {
 
-        if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
-        if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+            // ===== MENU HAMBURGUER =====
+            var navToggle = document.getElementById('nav-toggle');
+            var navMenu   = document.getElementById('nav-menu');
+            var navClose  = document.getElementById('nav-close');
+
+            if (navToggle) {
+                navToggle.addEventListener('click', function () {
+                    navMenu.classList.add('show-menu');
+                });
+            }
+            if (navClose) {
+                navClose.addEventListener('click', function () {
+                    navMenu.classList.remove('show-menu');
+                });
+            }
+
+            // Fecha menu ao clicar num link
+            var navLinks = document.querySelectorAll('.nav__link');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    navMenu.classList.remove('show-menu');
+                });
+            });
+
+            // ===== HEADER SCROLL =====
+            var header = document.getElementById('header');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY >= 50) {
+                    header.classList.add('scroll-header');
+                } else {
+                    header.classList.remove('scroll-header');
+                }
+            });
+
+            // ===== BIBLIOTECA DRAWER (mobile) =====
+            var fab     = document.getElementById('biblioteca-fab');
+            var overlay = document.getElementById('biblioteca-overlay');
+            var drawer  = document.getElementById('biblioteca-drawer');
+            var closeBtn = document.getElementById('biblioteca-close');
+
+            function openDrawer() {
+                overlay.classList.add('active');
+                drawer.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeDrawer() {
+                overlay.classList.remove('active');
+                drawer.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (fab)      fab.addEventListener('click', openDrawer);
+            if (overlay)  overlay.addEventListener('click', closeDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        });
     </script>
 </body>
 
